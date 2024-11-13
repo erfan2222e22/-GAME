@@ -25,6 +25,10 @@ const again_play_btn = $.querySelector('.play-again-btn');
 const reward_coins = $.querySelector('.reward-game');
 const points_h1 = $.querySelector('.points-h1');
 const show_points_play_again = $.querySelector('.rward-game-history');
+const hourse=$.querySelector('.hourses')
+const minutse=$.querySelector('.minutses')
+const secends=$.querySelector('.secends')
+
 
 points_h1.textContent = localStorage.getItem('rewards');//set items value in the dom and lcoal storage 
 again_play_btn.textContent = 'you have 🎫 ' + (+localStorage.getItem('ticket'));
@@ -103,7 +107,6 @@ const handelgame = () => { //array function for handel game
                     newitem.remove()
                 }, 1000)
                 show_points_play_again.textContent = colectpoints
-
             }
             newitem.addEventListener('click', handelcoins)
             show_game_values_div.appendChild(box_items_div)
@@ -229,7 +232,7 @@ const handel_lcoalstorage_ticket = () => {//set ticket in the lcoal storage func
     setInterval(() => {
         let one = 1;
         numbers2 += one;
-
+        alert('hellwo')
         div_befor_start.style.display = 'block'
         div_welcome_back.style.display = 'block'
         localStorage.setItem('dayStric', numbers2)
@@ -246,7 +249,7 @@ const acceptitems = () => {
     localStorage.setItem('ticket', numbers)
 }
 
-function fristtime() {//if player play for frist time give hime 5 ticket 
+function fristtimeplay() {//if player play for frist time give hime 5 ticket 
     if (!localStorage.getItem('frist-time')) {
 
         alert('welcome to you frist  ')
@@ -255,7 +258,7 @@ function fristtime() {//if player play for frist time give hime 5 ticket
     }
     return false;
 }
-if (fristtime()) {
+if (fristtimeplay()) {
     numbers += 5
 }
 
@@ -267,22 +270,64 @@ const againplayhandel = () => {// if time is game is end box again play show in 
     handelgame()
     numbers -= 1
     end_game_div.style.display = 'none'
-    time = 30
+    time= 30
 }
-fristtime()
-loading_page() //call functions 
+
+const handelclock=()=>{
+
+let time=Date.now()
+
+
+
+
+console.log(time);
+
+
+
+}
+
+handelclock()//call functions 
+fristtimeplay()
+loading_page() 
 handel_lcoalstorage_ticket()
 again_play_btn.addEventListener('click', againplayhandel)//set event click on items 
 btn_startplay.addEventListener('click', handelgame)
 btn_play.addEventListener('click', handelplay)
 btn_accept.addEventListener('click', acceptitems)
 
+//iwant to create clock for show gow much hace to get dayly point 
+
+$.addEventListener('visibilitychange',function(){
+
+
+  let num=0
+
+    setTimeout(()=>{
+      
+        num+=1
+
+        console.log(num);
+        
+    },1000)
+
+})
 
 
 
 
 
+// function pad(){
+
+// let now=new Date
+
+// let hourse=String(now.getHours()).padStart(2,'0')
+// let min=String(now.getMinutes()).padStart(2,'0')
+// let sec=String(now.getSeconds()).padStart(2,'0')
 
 
 
+// $.querySelector('.forfun').textContent=`${hourse}:${min}:${sec}`
+// }
 
+// setInterval(pad,1000)
+// pad()

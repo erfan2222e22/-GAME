@@ -478,8 +478,42 @@ p {
 }
 
 
+
 .reward-game {
     position: fixed;
     left: 85%;
     bottom: 61%;
+}
+.clock{
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba(12, 12, 12, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 410px;
+    height: 245px;
+}
+.box-show-clocks{
+/* display: inline-flex; */
+}
+.div-hourse,
+.div-minutse,
+.div-secend{
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    width: 93px;
+    position: relative;
+} 
+.div-minutse{
+    margin-left: 39%;
+    bottom: 90px;
+}
+.div-secend{
+    left: 71%;
+    bottom: 183px;
 }
