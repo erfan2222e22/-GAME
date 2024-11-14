@@ -29,10 +29,8 @@ const show_points_play_again = $.querySelector('.rward-game-history');
 points_h1.textContent = localStorage.getItem('rewards');//set items value in the dom and lcoal storage 
 again_play_btn.textContent = 'you have 🎫 ' + (+localStorage.getItem('ticket'));
 
-
 let colectpoints = 0; //all rewaeds points for play game 
 let time = 30;//time game 30 secend 
-
 
 const loading_page = () => {//
     setTimeout(() => {
@@ -55,7 +53,6 @@ const handelgame = () => { //array function for handel game
             end_game_div.style.display = 'block'
             end_game_div.style.top = '-550%'
 
-
             const coins = $.querySelectorAll('.coins')//select create items on the function
             const bombs = $.querySelectorAll('.bombs')
             const freze = $.querySelectorAll('.freze')
@@ -63,17 +60,14 @@ const handelgame = () => { //array function for handel game
             coins.forEach((items) => {//loop for empity class items 
 
                 items.className = ''
-
             })
             bombs.forEach((items) => {
 
                 items.className = ''
-
             })
             freze.forEach((items) => {
 
                 items.className = ''
-
             })
         }
     }
@@ -211,8 +205,6 @@ const handelplay = () => { // if   playe have ticket game start if dinont have m
     }
 }
 
-
-
 //set ticket in local storage 
 let numbers = parseInt(localStorage.getItem('ticket')) || 0;
 let numbers2 = parseInt(localStorage.getItem('dayStric')) || 0;
@@ -276,7 +268,6 @@ else {
     const reminingtime = 28800000 - timeelapsed;
     Math.ceil(reminingtime / 3600000)
 }
-
 }
 
 //call functions 
@@ -288,4 +279,3 @@ again_play_btn.addEventListener('click', againplayhandel)//set event click on do
 btn_startplay.addEventListener('click', handelgame)
 btn_play.addEventListener('click', handelplay)
 btn_accept.addEventListener('click', acceptitems)
-
