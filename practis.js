@@ -263,6 +263,7 @@ console.log(timeelapsed);
 
 if (timeelapsed >= 28800000) {
     div_welcome_back.style.display = 'block'
+    localStorage.removeItem('logintime')
 }
 else {
     const reminingtime = 28800000 - timeelapsed;
